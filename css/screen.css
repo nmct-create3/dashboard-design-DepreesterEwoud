@@ -21,6 +21,22 @@
 
     /* transitions */
     --transition-alpha: .1s;
+
+    /* global fontsize */
+    --global-fontsize: 15px;
+
+    /* fontweights */
+    --global-bold: 700;
+    --global-normal: 400;
+
+    /* Whitespace */
+    --global-baseline: 5px;
+    --global-whitespace-xxs: var(--global-baseline);
+    --global-whitespace-xs: calc(var(--global-baseline)*2); /* 10px */
+    --global-whitespace-sm: calc(var(--global-baseline)*3); /* 15px */
+    --global-whitespace-md: calc(var(--global-baseline)*4); /* 20px */
+    --global-whitespace-lg: calc(var(--global-baseline)*5); /* 25px */
+    --global-whitespace-xl: calc(var(--global-baseline)*6); /* 30px */
 }
 
 /*------------------------------------*\
@@ -90,6 +106,7 @@ img {
     Default markup for typographic elements
 */
 
+
 h1,
 h2,
 h3 {
@@ -98,20 +115,20 @@ h3 {
 
 h1 {
     font-size: 36px;
-    line-height: 48px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline)*10);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h2 {
     font-size: 32px;
-    line-height: 40px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline)*8);
+    margin: 0 0 var(--global-whitespace-lg);
 }
 
 h3 {
     font-size: 26px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline)*6);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 h4,
@@ -119,8 +136,8 @@ h5,
 h6 {
     font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
-    margin: 0 0 24px;
+    line-height: calc(var(--global-baseline)*5);
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 p,
@@ -130,7 +147,7 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: 0 0 var(--global-whitespace-md);
 }
 
 ul,
@@ -288,7 +305,36 @@ input::placeholder {
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+.c-app{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr;
+}
 
+.c-app__logo{
+    background-color: #3B3B53;
+    padding: var(--global-whitespace-lg) var(--global-whitespace-md) var(--global-whitespace-lg) var(--global-whitespace-md);
+
+}
+
+.c-logo{
+    color: white;
+    font-size: 15px;
+    line-height: var(--global-whitespace-md);
+}
+
+.c-app__sidebar{
+    background-color: #43425D;
+}
+
+.c-app__main{
+    background-color: #F0F0F7;
+}
+
+.c-app__topbar{
+
+}
 /*
     Component: Logo
     ---
